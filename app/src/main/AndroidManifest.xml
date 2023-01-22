@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -9,10 +13,18 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:name="androidx.multidex.MultiDexApplication"
+
         android:theme="@style/Theme.Mongo"
         tools:targetApi="31">
         <activity
+            android:name=".CRUD"
+            android:exported="true"
+            android:label="@string/title_activity_crud"
+            android:theme="@style/Theme.Mongo.NoActionBar" />
+        <activity
             android:name=".LoginActivity"
+
             android:exported="true" />
         <activity
             android:name=".SignUpActivity"
@@ -20,7 +32,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
-
     </application>
 
 </manifest>
